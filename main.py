@@ -35,10 +35,12 @@ def rysowanieFunkcji(funkcja, poczatek=-15.0, koniec=15.0):
 
 
 def zabezpieczenie(dane):
+    # sprawdz czy podane dane sa floatem (liczba)
     if (dane.replace('.', '', 1).isdigit() or
             dane.lstrip('-').replace('.', '', 1).isdigit()):
         return True
     else:
+        # jesli nie jest liczba, to zwroc stosowny komunikat
         print("Musisz podać liczbę!")
         return False
 
@@ -98,15 +100,19 @@ print("\n-------------\n"
 poczatekPrzedzialu = float(poczatekPrzedzialu)
 koniecPrzedzialu = float(koniecPrzedzialu)
 
+# zamien ze soba koniec i poczatek przedzialu, jezeli poczatek przedzialu jest dalej niz jego koniec
 if koniecPrzedzialu <= poczatekPrzedzialu:
     koniecPrzedzialu, poczatekPrzedzialu = poczatekPrzedzialu, koniecPrzedzialu
 
 funkcjaWybrana = funkcje[wyborFunkcji][1]
 
+# zapytanie do uzytkownika o podanie wezlow po przecinku
 wezlyX = input("Podaj po przecinku wartosci x węzłów (np. 1,2,3): ").split(",")
 
+# utworz slownik na wezly
 wezly = {}
 
+# zapisz wartosci y odpowiadajace argumentom x
 for wezel in wezlyX:
     wezly[float(wezel)] = float(funkcjaWybrana(float(wezel)))
 
