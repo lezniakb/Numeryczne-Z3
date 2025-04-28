@@ -115,9 +115,7 @@ while True:
 
     funkcjaWybrana = funkcje[wyborFunkcji][1]
 
-    print("Podaj w jakiej formie chcesz podać wartości x węzłów")
-
-    print("\n-------------\n"
+    print("-------------\n"
           "Podaj w jakiej formie chcesz podać wartości x węzłów\n"
           "1. Przez plik\n"
           "2. Przez teminal"
@@ -144,7 +142,7 @@ while True:
     # zapisz wartosci y odpowiadajace argumentom x
     for wezel in wezlyX:
         if float(wezel) <  poczatekPrzedzialu or float(wezel) > koniecPrzedzialu:
-            print(f"Podany węzeł {wezel} wychodzi poza zadany przedział, wartość zostaje pominięta!")
+            print(f"węzeł {wezel} wychodzi poza zadany przedział, wartość zostaje pominięta!")
         else:
             wezly[float(wezel)] = float(funkcjaWybrana(float(wezel)))
 
@@ -152,6 +150,6 @@ while True:
         print("Podano brak węzłów!")
         exit(1)
 
-    print("[Wyniki]")
+    print("[Wyniki]\n------------------------------")
 
     rysowanieFunkcji(funkcjaWybrana, poczatekPrzedzialu, koniecPrzedzialu)
